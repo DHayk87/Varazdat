@@ -1,0 +1,154 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container{
+    max-width: 1140px;
+    margin: 0 auto;
+}
+img{
+    width: 100%;
+}
+
+ul,ol{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+
+/* Nav style */
+
+nav{
+    background-color: lightsteelblue;
+    padding: 20px 0;
+}
+
+.flexNav{
+    display: flex;
+    justify-content: space-between;
+    font-size: 22px;
+
+}
+.menu ul{
+    display: flex;
+    gap: 30px;
+}
+
+input[type=checkbox]{
+    width: 25px;
+    height: 25px;
+    display: inline-block;
+    vertical-align: middle;
+    transform: translateX(30px);
+    opacity: 0;
+    cursor: pointer;
+}
+[class="bi bi-hexagon"]{
+    vertical-align: middle;
+}
+.burger{
+    display: none;
+}
+.burger ul{
+    position: absolute;
+    background-color: lightblue;
+    width: 100%;
+    text-align: center;
+    left: 0;
+    transform: translateX(-100%);
+    transition: 1s;
+}
+input[type=checkbox]:checked ~ ul{
+    transform: translateX(0);
+}
+
+
+/*
+    screen
+    print
+    speech
+    all
+*/
+
+@media screen and (max-width:1024px){
+    .container{
+        max-width: 900px;
+    }
+}
+@media screen and (max-width:768px){
+    .container{
+        max-width: 600px;
+    }
+    .menu{
+        display: none;
+    }
+    .burger{
+        display: block;
+    }
+}
+
+@media screen and (max-width:480px){
+    .container{
+        max-width: 360px;
+    }
+
+}
+/* header style */
+.flexHeader{
+    display: flex;
+    flex-wrap:wrap ;
+    padding: 40px 0;
+    align-items: center;
+    gap: 20px;
+}
+.text,
+.image{
+    width: calc(50% - 10px);
+}
+
+@media all  and (max-width:768px){
+    .text,
+    .image{
+        width: 100%;
+    }
+    .text p{
+        margin-bottom: 20px;
+        font-size: 20px;
+    }
+    h1{
+        margin-bottom: 20px;
+    }
+}
+
+
+/* section style */
+
+.gridSec{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 30px;
+}
+.gridSec .info{
+    place-self: center;
+}
+
+@media (min-width:769px) and (max-width:1024px) {
+    .gridSec{
+        grid-template-columns: 1fr 1fr;
+    }
+    .gridSec .info{
+        grid-column: 2 span;
+    }
+
+}
+@media (min-width:320px) and (max-width:768px) {
+    .gridSec{
+        grid-template-columns: 1fr;
+    }
+    .gridSec .info{
+        grid-column: 1 span;
+    }
+
+}
